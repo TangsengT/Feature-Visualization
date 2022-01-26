@@ -81,14 +81,3 @@ def decode(conv_output, i=0):
     pred_prob = tf.sigmoid(conv_raw_prob)
 
     return tf.concat([pred_xywh, pred_conf, pred_prob], axis=-1)
-
-
-
-
-
-
-
-
-
-
-
