@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89b010c6-c071-4ba1-890d-d28338684fb6" name="Default Changelist" comment="gradcam yolo">
+      <change afterPath="$PROJECT_DIR$/docs/bird.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imageNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GradCam/gradcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/GradCam/gradcam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/output.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_cat_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_cat_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_cat_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_cat_combined.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_dog_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_dog_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_dog_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_13/output_dog_combined.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_cat_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_cat_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_cat_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_cat_combined.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_dog_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_dog_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_dog_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_26/output_dog_combined.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_cat_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_cat_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_cat_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_cat_combined.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_dog_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_dog_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_dog_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grad_result/scale_52/output_dog_combined.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24C8CUIug8wUhcKg7x9f20JmOzl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PycharmProjects\Graduation-Design\grad_result\YOLOv3" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.ConvNet">
+    <configuration name="ConvNet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Graduation-Design" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\PycharmProjects\Graduation-Design\ConvNet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Graduation-Design" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.ConvNet" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89b010c6-c071-4ba1-890d-d28338684fb6" name="Default Changelist" comment="gradcam yolo" />
+      <created>1643123093240</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643123093240</updated>
+      <workItem from="1643123096067" duration="416000" />
+      <workItem from="1643124071181" duration="812000" />
+      <workItem from="1643125433187" duration="160000" />
+      <workItem from="1643206481427" duration="4391000" />
+      <workItem from="1643376521764" duration="61000" />
+      <workItem from="1643376603090" duration="690000" />
+      <workItem from="1643378434330" duration="44000" />
+      <workItem from="1644939513354" duration="379000" />
+      <workItem from="1644972726185" duration="1910000" />
+      <workItem from="1645004214911" duration="40000" />
+      <workItem from="1645959719757" duration="4474000" />
+      <workItem from="1646027806162" duration="7244000" />
+    </task>
+    <task id="LOCAL-00001" summary="gradcam yolo">
+      <created>1643206842662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1643206842662</updated>
+    </task>
+    <task id="LOCAL-00002" summary="gradcam yolo">
+      <created>1643207887688</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643207887688</updated>
+    </task>
+    <task id="LOCAL-00003" summary="gradcam yolo">
+      <created>1643208016847</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1643208016847</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gradcam yolo" />
+    <option name="LAST_COMMIT_MESSAGE" value="gradcam yolo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/imageNet.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GradCam/gradcam.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Graduation_Design$resnet.coverage" NAME="resnet Coverage Results" MODIFIED="1646035405885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/YOLOV3$test.coverage" NAME="test Coverage Results" MODIFIED="1643020554559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/YOLOV3$image_demo.coverage" NAME="image_demo Coverage Results" MODIFIED="1643008487205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Graduation_Design$test.coverage" NAME="test Coverage Results" MODIFIED="1646034870241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
