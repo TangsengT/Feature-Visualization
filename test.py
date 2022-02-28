@@ -6,7 +6,7 @@ from core.yolov3 import YOLOv3, decode
 from GradCam.gradcam import GradCam
 
 input_size = 416
-image_path = "./docs/image.jpg"
+image_path = "./docs/bird.jpg"
 
 input_layer = tf.keras.layers.Input([input_size, input_size, 3])
 feature_maps = YOLOv3(input_layer)
@@ -23,7 +23,7 @@ for i, fm in enumerate(feature_maps):
     bbox_tensor = decode(fm, i)
     bbox_tensors.append(bbox_tensor)
 
-model = tf.keras.Model(input_layer, bbox_tensors)
+model = tf.keras.Model(input_layer, bbox_tensors,name="YOLOv3")
 utils.load_weights(model, "./yolov3.weights")
 model.summary()
 layer_names = {"scale_13": "tf_op_layer_AddV2_22", "scale_26": "tf_op_layer_AddV2_18",
@@ -51,4 +51,4 @@ for layer_name in layer_names:
 print(f"--------------All Grad-Cam results have generated.----------------------")
 image = utils.draw_bbox(original_image, bboxes)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-cv2.imwrite(f"./grad_result/output.jpg", image)
+cv2.imwrite(f"./grad_result/YOLOv3/output.jpg", image)
