@@ -15,6 +15,7 @@ class GradCam:
         self.save_layer_name = save_layer_name
         if layer_name is None:
             self.layer_name = self.find_last_conv_layer()
+        if save_layer_name is None:
             self.save_layer_name = self.layer_name
         self._init_file()
 
