@@ -8,11 +8,12 @@ import os
 
 
 class GradCam:
-    def __init__(self, model, classIdx=None, layer_name=None, save_layer_name=None):
+    def __init__(self, model, classes_path, classIdx, layer_name=None, save_layer_name=None):
         self.model = model
         self.classIdx = classIdx
         self.layer_name = layer_name
         self.save_layer_name = save_layer_name
+        self.classes = read_class_names(classes_path)
         if layer_name is None:
             self.layer_name = self.find_last_conv_layer()
         if save_layer_name is None:
@@ -49,10 +50,30 @@ class GradCam:
         heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
         self._save_grad_result(heatmap, original_image, "bird")
 
+    def show_all_grad(self, original_image, image, step=3):
+        layer_names = [layer.name for layer in self.model.layers if len(layer.output_shape) == 4]
+        for i,l_name in enumerate(layer_names[::step]):
+            self.layer_name = l_name
+            grad_model = tf.keras.Model(inputs=self.model.inputs,
+                                        outputs=[self.model.get_layer(self.layer_name).output, self.model.output])
+            with tf.GradientTape() as tape:
+                last_conv_output, pred = grad_model(image)
+                if self.classIdx is None:
+                    self.classIdx = tf.argmax(pred[0])
+                score = pred[..., self.classIdx]
+            grads = tape.gradient(score, last_conv_output)
+            pooled_grads = tf.reduce_mean(grads, axis=(0, 1, 2)).numpy()
+            last_conv_output = last_conv_output.numpy()[0]
+            heatmap = last_conv_output @ pooled_grads[..., tf.newaxis]
+            heatmap = tf.squeeze(heatmap)
+            heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
+            self._save_grad_result(heatmap, original_image, "bird",save_index=str(i))
+            print(f"--------------Grad-Cam Layer {l_name} has generated.----------------------")
+
+
     def apply_yolo_grad(self, original_image, image):
-        classes = read_class_names(cfg.YOLO.CLASSES)
         for classIndex in self.classIdx:
-            print(f"--------------Grad-Cam {classes[classIndex]}----------------------")
+            print(f"--------------Grad-Cam {self.classes[classIndex]}----------------------")
             grad_model = tf.keras.Model(inputs=self.model.inputs,
                                         outputs=[self.model.get_layer(self.layer_name).output, self.model.output])
             heatmaps, maxVals, normalized_heatmaps = [], [], []
@@ -73,10 +94,10 @@ class GradCam:
             for i, heatmap in enumerate(heatmaps):
                 heatmap = self._normalize_heatmap(heatmap, maxVals)
                 normalized_heatmaps.append(heatmap)
-                self._save_grad_result(heatmap, original_image, classes[classIndex], str(i))
+                self._save_grad_result(heatmap, original_image, self.classes[classIndex], str(i))
             heatmap = np.maximum.reduce(normalized_heatmaps)
-            self._save_grad_result(heatmap, original_image, classes[classIndex], "combined")
-            print(f"--------------Grad-Cam {classes[classIndex]} has generated.----------------------")
+            self._save_grad_result(heatmap, original_image, self.classes[classIndex], "combined")
+            print(f"--------------Grad-Cam {self.classes[classIndex]} has generated.----------------------")
 
     def _normalize_heatmap(self, heatmap, maxVals):
         heatmap = heatmap / np.max(maxVals)
