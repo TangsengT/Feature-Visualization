@@ -62,6 +62,9 @@ class GradCam:
                     self.classIdx = tf.argmax(pred[0])
                 score = pred[..., self.classIdx]
             grads = tape.gradient(score, last_conv_output)
+            if grads is None:
+                print(f"--------------Grad-Cam Layer {l_name} has generated.----------------------")
+                continue
             pooled_grads = tf.reduce_mean(grads, axis=(0, 1, 2)).numpy()
             last_conv_output = last_conv_output.numpy()[0]
             heatmap = last_conv_output @ pooled_grads[..., tf.newaxis]
