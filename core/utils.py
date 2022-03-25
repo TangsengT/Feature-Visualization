@@ -49,6 +49,14 @@ def read_class_names(class_file_name):
     return names
 
 
+def read_imagenet_names(class_file_name):
+    names = {}
+    with open(class_file_name, 'r') as data:
+        for ID, name in enumerate(data):
+            names[ID] = name.split(" ", 1)[-1].split(",")[0].strip('\n')
+    return names
+
+
 def get_anchors(anchors_path):
     with open(anchors_path) as f:
         anchors = f.readline()
@@ -79,7 +87,6 @@ def image_preprocess(image, target_size, gt_boxes=None):
 
 
 def draw_bbox(image, bboxes, classes=read_class_names(cfg.YOLO.CLASSES), show_label=True):
-
     num_classes = len(classes)
     image_h, image_w, _ = image.shape
     hsv_tuples = [(1.0 * x / num_classes, 1., 1.) for x in range(num_classes)]
@@ -130,7 +137,6 @@ def bboxes_iou(boxes1, boxes2):
 
 
 def nms(bboxes, iou_threshold, sigma=0.3, method='nms'):
-
     classes_in_img = list(set(bboxes[:, 5]))
     best_bboxes = []
 

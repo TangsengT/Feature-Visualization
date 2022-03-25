@@ -1,6 +1,6 @@
 from tensorflow.keras.models import Model
 import numpy as np
-from core.utils import read_class_names
+from core.utils import read_class_names, read_imagenet_names
 from core.config import cfg
 import tensorflow as tf
 import cv2
@@ -8,12 +8,16 @@ import os
 
 
 class GradCam:
-    def __init__(self, model, classes_path, classIdx, layer_name=None, save_layer_name=None):
+    def __init__(self, model, classes_path, classIdx, dataset="default", layer_name=None, save_layer_name=None):
+        if model is None:
+            raise ValueError("Model could not be none.")
+        if classes_path is None:
+            raise ValueError("Classes path could not be none.")
         self.model = model
         self.classIdx = classIdx
         self.layer_name = layer_name
         self.save_layer_name = save_layer_name
-        self.classes = read_class_names(classes_path)
+        self.classes = read_imagenet_names(classes_path) if dataset == "imagenet" else read_class_names(classes_path)
         if layer_name is None:
             self.layer_name = self.find_last_conv_layer()
         if save_layer_name is None:
@@ -48,11 +52,11 @@ class GradCam:
         heatmap = last_conv_output @ pooled_grads[..., tf.newaxis]
         heatmap = tf.squeeze(heatmap)
         heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
-        self._save_grad_result(heatmap, original_image, "bird")
+        self._save_grad_result(heatmap, original_image, self.classes[self.classIdx.numpy()])
 
     def show_all_grad(self, original_image, image, step=3):
         layer_names = [layer.name for layer in self.model.layers if len(layer.output_shape) == 4]
-        for i,l_name in enumerate(layer_names[::step]):
+        for i, l_name in enumerate(layer_names[::step]):
             self.layer_name = l_name
             grad_model = tf.keras.Model(inputs=self.model.inputs,
                                         outputs=[self.model.get_layer(self.layer_name).output, self.model.output])
@@ -70,9 +74,8 @@ class GradCam:
             heatmap = last_conv_output @ pooled_grads[..., tf.newaxis]
             heatmap = tf.squeeze(heatmap)
             heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
-            self._save_grad_result(heatmap, original_image, "bird",save_index=str(i))
+            self._save_grad_result(heatmap, original_image, self.classes[self.classIdx.numpy()], save_index=str(i))
             print(f"--------------Grad-Cam Layer {l_name} has generated.----------------------")
-
 
     def apply_yolo_grad(self, original_image, image):
         for classIndex in self.classIdx:
@@ -112,6 +115,8 @@ class GradCam:
         heatmap = cv2.resize(heatmap, (original_image.shape[1], original_image.shape[0]))
         colormap = cv2.COLORMAP_JET
         heatmap = cv2.applyColorMap(heatmap, colormap)
+        if len(original_image.shape) == 2:
+            original_image = cv2.cvtColor(original_image, cv2.COLOR_GRAY2RGB)
         grad_img = original_image * 0.9 + heatmap
         cv2.imwrite(f"./grad_result/{self.model.name}/{self.save_layer_name}/output_{save_class_name}_{save_index}.jpg",
                     grad_img)

@@ -4,7 +4,9 @@ import core.utils as utils
 import tensorflow as tf
 from core.yolov3 import YOLOv3, decode
 from GradCam.gradcam import GradCam
+import os
 
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 input_size = 416
 image_path = "./docs/image.jpg"
 
@@ -46,7 +48,7 @@ def find_high_prob_classes(bboxes):
 classIdx = find_high_prob_classes(bboxes)
 for layer_name in layer_names:
     print(f"--------------The Grad-Cam {layer_name} starts.----------------------")
-    grad_cam = GradCam(model, "data/classes/coco.names",classIdx, layer_names[layer_name], layer_name)
+    grad_cam = GradCam(model, "data/classes/coco.names",classIdx, layer_name=layer_names[layer_name],save_layer_name=layer_name)
     grad_cam.apply_yolo_grad(original_image, tf.constant(image_data, dtype=tf.float32))
 print(f"--------------All Grad-Cam results have generated.----------------------")
 image = utils.draw_bbox(original_image, bboxes)
