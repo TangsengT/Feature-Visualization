@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89b010c6-c071-4ba1-890d-d28338684fb6" name="Default Changelist" comment="update interface">
-      <change afterPath="$PROJECT_DIR$/data/classes/imagenet.names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytorch/GradCam/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytorch/GradCam/gradcam.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytorch/GradCam/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytorch/test.py" afterDir="false" />
+    <list default="true" id="89b010c6-c071-4ba1-890d-d28338684fb6" name="Default Changelist" comment="update pytorch version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConvNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GradCam/gradcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/GradCam/gradcam.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/classes/test.names" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +158,7 @@
       <workItem from="1647997973699" duration="13000" />
       <workItem from="1648189902256" duration="2811000" />
       <workItem from="1648205520951" duration="291000" />
-      <workItem from="1648206547599" duration="1665000" />
+      <workItem from="1648206547599" duration="2737000" />
     </task>
     <task id="LOCAL-00001" summary="gradcam yolo">
       <created>1643206842662</created>
@@ -227,7 +216,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647237604278</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update pytorch version">
+      <created>1648210474494</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1648210474494</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update pytorch version">
+      <created>1648210546445</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1648210546445</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +250,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gradcam yolo" />
     <MESSAGE value="update interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="update interface" />
+    <MESSAGE value="update pytorch version" />
+    <option name="LAST_COMMIT_MESSAGE" value="update pytorch version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
